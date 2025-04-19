@@ -1,0 +1,8 @@
+.venv/
+.vscode/
+.env
+env/
+bin/
+__pycache__/
+README.md
+/devTools/
