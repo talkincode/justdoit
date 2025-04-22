@@ -1,13 +1,13 @@
 version: '3'
 
 services:
-  teamsdns:
+  justdoit:
     image: talkincode/justdoit:latest
     container_name: justdoit
     command: ["node", "src/index.js"]
     restart: unless-stopped
-    environment:
-      - TZ=Asia/Shanghai
+    env_file:
+      - .env
     logging:
       driver: "json-file"
       options:
