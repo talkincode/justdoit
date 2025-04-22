@@ -41,11 +41,11 @@ export async function askAgent({
 
     console.log(`Run completed with status: ${run.status}`);
 
-    await client.agents.deleteThread(thread.id);
-    await client.agents.deleteAgent(agent.id);
-
     // 获取并返回消息
     const messages = await client.agents.listMessages(thread.id);
+
+    await client.agents.deleteThread(thread.id);
+    await client.agents.deleteAgent(agent.id);
 
     // 过滤仅返回机器人的文本
     const assistantMessages = messages.data
